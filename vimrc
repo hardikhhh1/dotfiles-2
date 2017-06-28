@@ -18,6 +18,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set relativenumber
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -66,10 +67,6 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-" Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
-
 filetype plugin on
 filetype indent on
 
@@ -116,3 +113,21 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+
+" Turning on autopep8 for python files
+" Run gggqG to run all the whole file
+" gqap For a paragraph
+au FileType python setlocal formatprg=autopep8\ -
+let g:polyglot_disabled = ['ruby']
+
+" Pymode settings:
+let g:pymode_options_max_line_length = 99
+    let g:pymode_lint_ignore = "E128,E127"
+
+
+" Markdown preview
+let vim_markdown_preview_toggle=2
+let vim_markdown_preview_hotkey=',m'
+
+
+
