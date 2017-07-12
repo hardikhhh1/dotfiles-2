@@ -96,6 +96,7 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.pyc
 
 "
 " ================ Scrolling ========================
@@ -125,9 +126,4 @@ let g:pymode_options_max_line_length = 99
     let g:pymode_lint_ignore = "E128,E127"
 
 
-" Markdown preview
-let vim_markdown_preview_toggle=2
-let vim_markdown_preview_hotkey=',m'
-
-
-
+set shell=/bin/bash
